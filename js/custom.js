@@ -8,6 +8,7 @@ const bounds = [
 
 
 var center = [-79.4512, 43.6568];
+let geoDetailsInfo = {}
 
 
 const map = new mapboxgl.Map({
@@ -25,6 +26,7 @@ const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
     zoom: 19,
+    bbox: [-97.846976993, 30.167105159, -97.751211018, 30.242129961],
 });
 map.addControl(new mapboxgl.NavigationControl());
 
@@ -61,8 +63,10 @@ map.on("load", function () {
             "fill-color": "#E28A5E", //this is paint color, change it according to you
         },
     });
-
-    geocoder.on("result", (e) => {
+    geocoder.on("result", ({ result: retrievedGeoInformation }) => {
+        if (retrievedGeoInformation) {
+            geoDetailsInfo = retrievedGeoInformation
+        }
         $(".loader").css("display", "block");
         $("#map").css("opacity", 0);
         $("#map").css("display", "block");
@@ -96,6 +100,14 @@ function getArea() {
             const rounded_area_in_ft =
                 Math.round(rounded_area_in_meter * 10.764 * 100) / 100;
             const price_per_square_ft = rounded_area_in_ft * 5.55;
+            const btnToOpenModal = document.getElementById('info-modal')
+            btnToOpenModal.removeAttribute('disabled');
+            const modal_title = document.querySelector('.modal-title')
+            const areaInSqFtForModal = document.querySelector('#roof-top-sqft')
+            const roofPriceForModal = document.querySelector('#roof-top-price')
+            areaInSqFtForModal.innerText = `Your square feet area is ${rounded_area_in_ft}`
+            modal_title.innerText = geoDetailsInfo['place_name']
+            roofPriceForModal.innerText = `$ ${Math.ceil(price_per_square_ft)}`
         }
     });
 }
@@ -125,4 +137,7 @@ const successNotification = () => {
 const hideLoader = () => {
     $("#map").css("opacity", 1);
     $(".loader").css("display", "none");
+}
+function openDetailsModel() {
+    document.getElementById('exampleModal').classList.toggle('d-none')
 }

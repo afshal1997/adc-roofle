@@ -1,0 +1,296 @@
+body,
+html, *{
+    font-family: 'Roboto', sans-serif;
+}
+
+.top-bar {
+    background: #273981;
+    padding: 10px 0;
+}
+
+.top-bar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+.top-bar p {
+    color: #fff;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    margin: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-light .navbar-brand {
+    max-width: 147px;
+}
+
+.navbar-expand-lg .navbar-nav {
+    margin-left: 60px;
+}
+
+.navbar-light .navbar-brand img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    border-bottom: 2px solid #000;
+}
+
+.header-btn {
+    background: #273981;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 20px 66px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: Roboto;
+}
+.header-btn:hover{
+    color:#fff;
+}
+.social {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social li a {
+    max-width: 20px;
+    max-height: 20px;
+    margin-left: 15px;
+    transition: all 0.3s linear;
+}
+
+.social li a img {
+    max-width: 20px;
+    max-height: 20px;
+    transition: all 0.3s linear;
+    filter: invert(1) brightness(1000);
+}
+
+.social li a:hover img {
+    filter: none;
+}
+
+
+footer {
+    padding-top: 100px;
+}
+
+footer .ft-logo {
+    max-width: 245px;
+}
+
+footer .ft-logo img {
+    max-width: 200px;
+    width: 100%;
+}
+
+footer .ft-desc {
+    margin: 0;
+    margin: 30px 0;
+    max-width: 280px;
+}
+
+footer .ft-social img {
+    max-width: 25px;
+}
+
+footer .ft-social li {
+    margin-right: 15px !important;
+}
+
+footer h3 {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: Roboto;
+    color: #273171;
+    margin-bottom: 25px;
+}
+
+.ft-menu li {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.ft-menu li a {
+    color: #54595F;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.copyright {
+    background: #273171;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.copyright p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.copyright ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.copyright ul a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.cntct li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.cntct li i {
+    margin-right: 15px;
+}
+
+.cntct li i img {
+    max-width: 30px;
+    width: 100%;
+}
+
+.mob-navbar-brand {
+    display: none;
+}
+
+@media(max-width: 1366px) {
+    .header-btn {
+        font-size: 14px;
+        padding: 16px 46px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 16px;
+        margin-right: 25px;
+    }
+}
+
+@media(max-width: 991px) {
+    .mob-navbar-brand {
+        display: inline-block;
+    }
+
+    .top-bar p,
+    .top-bar a {
+        font-size: 12px;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .social li a img {
+        max-width: 18px;
+    }
+
+    .top-data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px !important;
+    }
+
+    .top-data li {
+        display: flex;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand,
+    .header-btn {
+        display: none;
+    }
+
+    .mob-navbar-brand img {
+        max-width: 120px;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        margin: 0;
+        background: #273981;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-item a {
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+
+    .navbar-expand-lg .navbar-nav .nav-item a:hover {
+        border: none;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+
+    .navbar-expand-lg .navbar-nav .nav-item:hover {
+        background: #fff;
+    }
+
+    .navbar-light .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .copyright .col-lg-6 {
+        text-align: center;
+    }
+
+    .copyright ul {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+
+@media(max-width: 480px) {
+    .top-data {
+        flex-flow: column;
+    }
+
+    .top-data li {
+        margin-bottom: 10px;
+    }
+}
